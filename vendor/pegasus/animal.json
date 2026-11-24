@@ -1,0 +1,44 @@
+{
+  "schema_version": "monolithic-zoo-extension/1",
+  "id": "PEGASUS",
+  "version": "0.1.0",
+  "name": "Provenance-Enforced Geometric-Algebraic Synthesis Under Scrutiny",
+  "mnemonic_words": [
+    "Provenance",
+    "Enforced",
+    "Geometric",
+    "Algebraic",
+    "Synthesis",
+    "Under",
+    "Scrutiny"
+  ],
+  "introduced_local_date": "2026-11-11",
+  "timezone": "America/Los_Angeles",
+  "repository": "https://github.com/enuminous/Pegasus",
+  "roster_number": null,
+  "roster_status": "standalone extension; external registry not modified",
+  "purpose": "Audit typed structures and the evidence for bridges in proposed mathematical hybrids.",
+  "contract": "SPEC.md",
+  "implementation": "pegasus/audit.py",
+  "input_contract": "docs/INPUT_FORMAT.md",
+  "statuses": [
+    "PASS",
+    "FAIL",
+    "UNRESOLVED"
+  ],
+  "limits": {
+    "formalization": "No Lean implementation",
+    "external_replication": false,
+    "empirical_validation": false,
+    "general_bridge_checker": false,
+    "prose_to_formal_translation": "human review required"
+  },
+  "mascot": {
+    "name": "Pegasus monstrum",
+    "source": "sources/pegasus-source.jpeg",
+    "taxonomic_status": "speculative illustration"
+  },
+  "source_manifest": "examples/source-claims.json",
+  "positive_control": "examples/toy-hybrid.json",
+  "model_attribution": "Prepared with AI assistance at Matthew Chenoweth Wright\u2019s request."
+}

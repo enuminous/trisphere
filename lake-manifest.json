@@ -1,0 +1,89 @@
+{
+  "version": "1.1.0",
+  "packagesDir": ".lake/packages",
+  "packages": [
+    {
+      "type": "path",
+      "name": "mathlib",
+      "scope": "",
+      "dir": "formal-deps/mathlib",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "Cli",
+      "scope": "leanprover",
+      "dir": "formal-deps/mathlib/.lake/packages/Cli",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "LeanSearchClient",
+      "scope": "leanprover-community",
+      "dir": "formal-deps/mathlib/.lake/packages/LeanSearchClient",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "Qq",
+      "scope": "leanprover-community",
+      "dir": "formal-deps/mathlib/.lake/packages/Qq",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "aesop",
+      "scope": "leanprover-community",
+      "dir": "formal-deps/mathlib/.lake/packages/aesop",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "batteries",
+      "scope": "leanprover-community",
+      "dir": "formal-deps/mathlib/.lake/packages/batteries",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "importGraph",
+      "scope": "leanprover-community",
+      "dir": "formal-deps/mathlib/.lake/packages/importGraph",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "plausible",
+      "scope": "leanprover-community",
+      "dir": "formal-deps/mathlib/.lake/packages/plausible",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "proofwidgets",
+      "scope": "leanprover-community",
+      "dir": "formal-deps/mathlib/.lake/packages/proofwidgets",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    }
+  ],
+  "name": "triSphereLab",
+  "lakeDir": ".lake"
+}

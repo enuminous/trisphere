@@ -1,0 +1,60 @@
+{
+  "Chimera": {
+    "input": {
+      "object": "fixed-position drive trajectory",
+      "interaction": "audit of the written law",
+      "has_classical_record": true,
+      "operational_recovery": false,
+      "evidence_sufficient": false
+    },
+    "result": {
+      "object": "fixed-position drive trajectory",
+      "interaction": "audit of the written law",
+      "tags": [
+        "U",
+        "C"
+      ],
+      "operational_recovery": false,
+      "notes": [],
+      "anti_circularity": "Similarity of information structure is not evidence of identity of physical mechanism."
+    },
+    "commit": "b5e35e71d6454462e0da24d8bb2ea90e80520471",
+    "git_blob": "4f31d80765a9103c581a6bcb4685193afe4abe5b"
+  },
+  "Circus": {
+    "input": {
+      "pipeline": [
+        {
+          "stage": "definition",
+          "provenance_status": "documented"
+        }
+      ],
+      "dependencies": [],
+      "risks": [
+        {
+          "materiality": "material",
+          "status": "present",
+          "description": "periodicity used to describe a drive that does not yield a periodic orbit"
+        }
+      ],
+      "independent_checks": []
+    },
+    "result": "FAIL",
+    "commit": "647c91dc06b4ea48871c06608298b46f00f68f99",
+    "git_blob": "65421922766c9178c1b188703ac21c03f95be6dd"
+  },
+  "Zoo-Monster": {
+    "input": {
+      "preregistration": {
+        "registered_before_outcomes": false
+      },
+      "baseline": {
+        "matched": false
+      },
+      "conditions": []
+    },
+    "result": "N/A",
+    "commit": "95f475ccffa30afe1853659dfd9431734b2788e0",
+    "git_blob": "ae86fbb2712ee4c5736519eb6bdb9f0d9e65aced"
+  }
+}

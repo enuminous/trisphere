@@ -1,0 +1,74 @@
+name: Verify and deploy Tri-Sphere Laboratory
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: false
+          use-github-cache: false
+      - run: python3 replay.py
+      - name: Stage the standalone laboratory
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.TRISPHERE_ACTIONS_PAGES == 'true'
+        run: |
+          mkdir -p public
+          cp index.html .nojekyll public/
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.TRISPHERE_ACTIONS_PAGES == 'true'
+        with:
+          path: public
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.TRISPHERE_ACTIONS_PAGES == 'true'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy verified laboratory
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+
+  release:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - name: Publish the verified first edition
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: lab-v1.0.0
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "The first edition is already published."
+            exit 0
+          fi
+          archive="$RUNNER_TEMP/TriSphere_Laboratory.zip"
+          git archive --format=zip --output="$archive" "$GITHUB_SHA"
+          gh release create "$RELEASE_TAG" "$archive" \
+            --target "$GITHUB_SHA" --title "Tri-Sphere Laboratory 1.0" \
+            --notes "Standalone browser laboratory, Lean 4.19.0 proofs, full Zoo audit, simulation results, and offline dependency bundles. Open index.html after extracting the ZIP. Run python3 replay.py to reproduce the checks."

@@ -1,0 +1,322 @@
+[
+  {
+    "id": "E1",
+    "title": "Thirteen indexed positions",
+    "lines": "116–128",
+    "status": "PASS",
+    "kind": "Definition",
+    "result": "Fin 13 gives precisely 0 through 12. The integer labels sample a continuous radius. The count is stipulated.",
+    "evidence": "TriSphere.lean · Layer; evidence/experiments.json · atlas",
+    "next": "A derivation of the count needs an independent selection rule."
+  },
+  {
+    "id": "E2",
+    "title": "Positive-radius shells and their center",
+    "lines": "130–136",
+    "status": "PASS",
+    "kind": "Geometry",
+    "result": "For positive radius the level set is a scaled unit 3-sphere in four real coordinates. At zero all four coordinates vanish.",
+    "evidence": "TriSphere.shell_zero; Lyons, An Elementary Introduction to the Hopf Fibration",
+    "next": "Distinguish the degenerate level set in every universal statement."
+  },
+  {
+    "id": "E3a",
+    "title": "Hopf map on positive shells",
+    "lines": "138–143",
+    "status": "PASS",
+    "kind": "Geometry",
+    "result": "The output has length ρ². Divide by ρ² for a unit-sphere target. Common complex phase preserves the output. Linking magnitude one for distinct fibers with consistent orientations is an established topological result.",
+    "evidence": "TriSphere.hopf_norm, hopf_phase, radius_two_control; Lyons pp. 8–14",
+    "next": "The Lean results cover the polynomial and symmetry identities; linking uses the cited topology."
+  },
+  {
+    "id": "E3b",
+    "title": "Every layer has linked circular fibers",
+    "lines": "138–143; 2325–2331",
+    "status": "FAIL",
+    "kind": "Counterexample",
+    "result": "At ρ=0 the domain is a singleton. Two distinct circular fibers cannot exist there.",
+    "evidence": "TriSphere.shell_zero; evidence/experiments.json · hopf-scaling",
+    "next": "Restrict the fibration to ρ>0; supply radial transport independent of the fiber chart."
+  },
+  {
+    "id": "E4",
+    "title": "A zero radial speed implies a reflecting wall",
+    "lines": "145–149; 246–255",
+    "status": "FAIL",
+    "kind": "Counterexample",
+    "result": "ρ(t)=12+t³ crosses 12 with zero velocity there. This tests a pointwise condition. A reflecting impact with incoming speed generally jumps velocity; a smooth turn has different conditions.",
+    "evidence": "TriSphere.stationary_crossing",
+    "next": "Specify a phase-space boundary law, uniqueness assumptions, and energy exchange."
+  },
+  {
+    "id": "E5a",
+    "title": "The stated return map has the given endpoint",
+    "lines": "151–155",
+    "status": "PASS",
+    "kind": "Definition",
+    "result": "There is exactly one function into a singleton, so the endpoint requirement carries no trajectory information.",
+    "evidence": "Source lines 151–155; AUDIT.md · endpoint versus path",
+    "next": "Specify a time-parametrized family of paths or a transition law."
+  },
+  {
+    "id": "E5b",
+    "title": "The return map specifies a definite path",
+    "lines": "151–155",
+    "status": "FAIL",
+    "kind": "Counterexample",
+    "result": "12(1−t) and 12(1−t)² share start and end at t=0,1, but at t=1/2 they give 6 and 3. The endpoint map cannot select between them.",
+    "evidence": "TriSphere.a_destination_does_not_fix_a_path",
+    "next": "Supply dynamics that select a return path and duration."
+  },
+  {
+    "id": "E6",
+    "title": "The mirror is an involution with one fixed layer",
+    "lines": "157–161",
+    "status": "PASS",
+    "kind": "Formal theorem",
+    "result": "All 13 indices map back after two reflections. Only layer 6 maps to itself.",
+    "evidence": "TriSphere.mirror_involution, midpoint_unique",
+    "next": "Complete on the declared finite domain."
+  },
+  {
+    "id": "E7",
+    "title": "A human-controlled Product/Compost filter",
+    "lines": "163–184; 219–225",
+    "status": "UNRESOLVED",
+    "kind": "Candidate mechanism",
+    "result": "A typed choice and a conservative split are possible. A position-dependent or observer-dependent valve and its physical coupling are unspecified. The lab exposes the two routing choices as assumptions.",
+    "evidence": "TriSphere.filter_conservation; lab/engine.js; lines 163–177",
+    "next": "Provide valve inputs, timing, destination weights, units and a measured output."
+  },
+  {
+    "id": "E8",
+    "title": "Periodic motion as a stated condition",
+    "lines": "186–191",
+    "status": "PASS",
+    "kind": "Definition",
+    "result": "The displayed equality is a definition of T-periodicity for positive T. Constant trajectories satisfy it. A nontrivial cycle needs a nonconstant state and a return law.",
+    "evidence": "TriSphere.periodic_level; lines 186–191",
+    "next": "Require nonzero velocity somewhere and simultaneous position/velocity closure."
+  },
+  {
+    "id": "E9",
+    "title": "Twelve ordered face choices each way",
+    "lines": "193–197",
+    "status": "PASS",
+    "kind": "Arithmetic",
+    "result": "Allowing all 12 inward and all 12 outward face labels yields 144 ordered pairs. No geometry fixes a physical pairing or reflection probability.",
+    "evidence": "TriSphere.face_pairs; Wolfram MathWorld, Regular Dodecahedron",
+    "next": "Supply a transition relation to count actual reachable pairs."
+  },
+  {
+    "id": "E10a",
+    "title": "Steady position drive automatically sustains a nonconstant loop",
+    "lines": "199–250; 426–446; 1576–1582",
+    "status": "FAIL",
+    "kind": "Formal obstruction",
+    "result": "For a fixed valve, a single-valued drive with a primitive and positive damping, effective energy falls at rate −γv². A periodic smooth state must have v=0 at every time. The later timed-drive correction survives.",
+    "evidence": "TriSphere.drive_primitive, energy_rate, fixed_drive_periodic_velocity_zero",
+    "next": "State an external phase, hysteresis, or an event law, then derive its return map."
+  },
+  {
+    "id": "E10b",
+    "title": "A timed kick can maintain a repeating excursion",
+    "lines": "239–245; 1576–1582",
+    "status": "PASS",
+    "kind": "Constructive control",
+    "result": "For the auditor’s harmonic half-oscillator, positive post-impact E obeys E_next=qE+J. For 0≤q<1 deviations shrink as qⁿ. Positive J gives a positive fixed point. The theorem concerns the declared return map.",
+    "evidence": "TriSphere.kick_fixed, kick_iterate, kick_converges; evidence/experiments.json · return-map",
+    "next": "For the blueprint, identify a measured kick law and its work per return."
+  },
+  {
+    "id": "E10c",
+    "title": "Frictional flat-band flight keeps constant speed",
+    "lines": "250–255; 285–295",
+    "status": "FAIL",
+    "kind": "Formal obstruction",
+    "result": "Where both potential slope and drive vanish, v′=−γv. Nonzero speed decays when γ>0. There is a sharp entry-speed threshold even in a perfectly flat band.",
+    "evidence": "TriSphere.coast_accel_ne_zero; evidence/experiments.json · wall-threshold",
+    "next": "Specify entry speed, plateau width, damping and wall law."
+  },
+  {
+    "id": "E10d",
+    "title": "Layer-11 turn and wall turn describe one event",
+    "lines": "74–86; 250–255; 285–308; 691–708",
+    "status": "UNRESOLVED",
+    "kind": "Source revisions",
+    "result": "An interior reversal, a finite-time wall impact, and an asymptotic approach have different traces. The text uses all three descriptions.",
+    "evidence": "Source lines 74–86, 246–255, 285–308, 691–708",
+    "next": "Choose a boundary rule and a measurable event definition."
+  },
+  {
+    "id": "E10e",
+    "title": "One oscillator derives the other geometric structures",
+    "lines": "487–501",
+    "status": "FAIL",
+    "kind": "Countermodel",
+    "result": "The same scalar trajectory can be attached to any number of sampling layers. Its ODE has no fiber variables, face labels or intent classifier. Changing the number of sample positions leaves the smooth law intact.",
+    "evidence": "AUDIT.md · independence of the atlas; evidence/experiments.json · coordinate-rescaling",
+    "next": "Add a noncircular rule deriving the discrete atlas and its coupling."
+  },
+  {
+    "id": "E10f",
+    "title": "Capture, storage and bifurcation at a valve threshold",
+    "lines": "309–344; 426–446",
+    "status": "UNRESOLVED",
+    "kind": "Hypothesis",
+    "result": "A flat shelf alone supplies no restoring force toward a unique storage point. With a fixed localized drive, an initially resting plateau point can remain there at nonzero k. No bifurcation parameter or return-memory dynamics is specified uniquely.",
+    "evidence": "evidence/experiments.json · plateau-equilibrium",
+    "next": "Freeze force, valve policy, impact and storage rules; test perturbed initial states."
+  },
+  {
+    "id": "S1",
+    "title": "Newtonian shell theorem yields a flat exterior",
+    "lines": "552–576",
+    "status": "FAIL",
+    "kind": "Superseded claim",
+    "result": "For nonzero enclosed mass in ordinary 3D inverse-square gravity, exterior V=−GM/r and V′=GM/r². The later correction retracts flatness; its description of the gradient as 1/r still confuses potential with gradient. A shell S³ in four coordinates needs its own force law.",
+    "evidence": "MathWorld, Newton’s Shell Theorem; AUDIT.md · shell theorem",
+    "next": "Choose ambient dimension, density and field equation before deriving V."
+  },
+  {
+    "id": "A1",
+    "title": "Dated Time / Space / Phase assignment",
+    "lines": "450–466; 1632–1640; 2292–2303",
+    "status": "PASS",
+    "kind": "Interpretive specification",
+    "result": "The November 24 range assigns boundaries 0 and 12, Time 1–5, Space 6, Phase 7–11. Opposite bins pair under the mirror. The older open orientation entry remains visible.",
+    "evidence": "TriSphere.coarse_mirror, coarse_surjective; source lines 450–466",
+    "next": "Use as an atlas convention unless an independent experiment establishes a physical mapping."
+  },
+  {
+    "id": "A2",
+    "title": "The coarse atlas inherits an exact one-step dynamics",
+    "lines": "1495–1511; 1564–1608",
+    "status": "FAIL",
+    "kind": "Counterexample to unconditional inheritance",
+    "result": "Fine layers 1 and 5 both lie in Time. One outward index step sends them to 2 and 6, in different bins. A memoryless step on the five bins cannot reproduce this particular map. Other evolutions might descend.",
+    "evidence": "TriSphere.no_coarse_step; evidence/experiments.json · coarse-counterexample",
+    "next": "Prove coarse∘fineStep = coarseStep∘coarse for the actual dynamics or retain hidden state."
+  },
+  {
+    "id": "A3",
+    "title": "Five physical positions are fixed by the five Platonic solids",
+    "lines": "1592–1608; 1641–1651",
+    "status": "UNRESOLVED",
+    "kind": "Unproved bridge",
+    "result": "Counting the regular convex Platonic solids gives five; the text alternates between choosing and finding a position count. No map establishing necessity is supplied.",
+    "evidence": "MathWorld, Platonic Solid; source lines 1592–1608, 1641–1651",
+    "next": "Specify a bijection and prove why the dynamical states exhaust precisely its five members."
+  },
+  {
+    "id": "A4",
+    "title": "Dodecahedron / icosahedron duality and mirror pairing",
+    "lines": "1663–1688",
+    "status": "PASS",
+    "kind": "Known geometry",
+    "result": "The dodecahedron and icosahedron exchange vertices and faces under duality and both have 30 edges. The layer labels 5 and 7 pair arithmetically. These are two independently defined relations.",
+    "evidence": "MathWorld, Platonic Solid; TriSphere.mirror_involution",
+    "next": "Show an actual transformation for a claim that changing viewpoint alone changes a solid into its dual."
+  },
+  {
+    "id": "A5",
+    "title": "Thirteen layers plus five positions give seventeen distinct objects",
+    "lines": "505–519; 1652–1662",
+    "status": "UNRESOLVED",
+    "kind": "Cardinality assumption",
+    "result": "13+5−1=17 assumes two sets with precisely one common element. If the five are bins of the same atlas, that intersection has not been defined.",
+    "evidence": "Source lines 505–519; AUDIT.md · atlas and quotient",
+    "next": "Give the two sets, their types and an embedding before counting a union."
+  },
+  {
+    "id": "A6",
+    "title": "Fluid, seams and observer standing determine radial flux",
+    "lines": "262–284; 341–429; 505–538",
+    "status": "UNRESOLVED",
+    "kind": "Model closure",
+    "result": "A streamline ODE alone does not specify a transported density, flux, storage or valve law. A fixed Filter index and a moving decision point need separate state variables.",
+    "evidence": "Source lines 262–284 and 505–519",
+    "next": "Give a continuity equation, flux, boundary and reservoir budgets, and observables."
+  },
+  {
+    "id": "B1",
+    "title": "Biological, optics and tokamak parallels validate the assembly",
+    "lines": "1245–1399; 1610–1640; 2122–2148",
+    "status": "UNRESOLVED",
+    "kind": "Empirical bridge",
+    "result": "The source itself distinguishes analogies and observations. No observation model, independent dataset, measurable intervention or competing model for this assembly accompanies the upload.",
+    "evidence": "Source sections; prior technical companion cited in AUDIT.md",
+    "next": "Choose one observable and test a frozen differential prediction on held-out data."
+  },
+  {
+    "id": "B2",
+    "title": "Language and manuscript readings as testable physical mechanisms",
+    "lines": "1816–1975",
+    "status": "UNRESOLVED",
+    "kind": "Historical/empirical hypothesis",
+    "result": "The source labels these mappings interpretive. Symbolic correspondences and assigned impedance numbers provide no calibrated sensor, independently decoded corpus or held-out prediction here.",
+    "evidence": "Source lines 1880–1920, 1960–1975",
+    "next": "For a historical decoding claim, freeze a codebook and blind-score unseen pages."
+  },
+  {
+    "id": "T1",
+    "title": "Theological, social and personal readings",
+    "lines": "16–25; 1707–1815; 1977–2291",
+    "status": "NOT_APPLICABLE",
+    "kind": "Author interpretation",
+    "result": "The Monad, Source, ego and theological readings express Beth’s interpretation. A physical proof criterion has no target in an explicitly symbolic reading. Adjacent empirical claims remain separately open.",
+    "evidence": "Source lines 11–25, 1707–1749, 2305–2310",
+    "next": "Preserve author attribution and source wording."
+  },
+  {
+    "id": "B3",
+    "title": "The combined structure describes the physical universe",
+    "lines": "2356–2377",
+    "status": "UNRESOLVED",
+    "kind": "Empirical scope",
+    "result": "The author expressly withholds this claim. The audit assesses empirical standing as an obligation for any future physical reading. Formal identities, cross-domain similarities and simulations use shared assumptions.",
+    "evidence": "Source lines 2356–2377; evidence/pegasus.json",
+    "next": "A distinct, falsifiable observable with a sealed comparison and independent measurements."
+  },
+  {
+    "id": "A7",
+    "title": "Circular phase and interval radius",
+    "lines": "29–37; 927–933",
+    "status": "PASS",
+    "kind": "Constructive interpretation",
+    "result": "A directed phase on 24 ticks can project onto 13 radii by taking the smaller distance from phase zero. Phases 5 and 19 share radius 5 but have different next radii. This reconciles the two coordinate pictures only after adding direction.",
+    "evidence": "TriSphere.phase_period, phase_orientation_loss; five-versus-thirteen lab",
+    "next": "Derive the phase and period from a physical dynamics before assigning them empirical meaning."
+  },
+  {
+    "id": "A8",
+    "title": "Doubling, additive patterns and standing generate geometric states",
+    "lines": "1065–1190; 1401–1493",
+    "status": "UNRESOLVED",
+    "kind": "Interpretive construction",
+    "result": "The text gives examples of doubling and sums such as 3+5=8 and 5+7=12, then assigns the results to faces, layers or perspectives. It supplies no single-valued generation rule for unseen shapes or a criterion for choosing which count to compare.",
+    "evidence": "Source lines 1116–1137 and 1401–1454",
+    "next": "Freeze the objects and a typed update rule; withhold at least one predicted count."
+  },
+  {
+    "id": "A9",
+    "title": "A change in viewpoint makes geometric duals identical",
+    "lines": "1177–1190; 1663–1688",
+    "status": "FAIL",
+    "kind": "Literal geometric reading",
+    "result": "A rotation or change of coordinates preserves vertex count. The dodecahedron has 20 vertices and its dual has 12. Dualization can construct the second object; viewpoint alone cannot give a rigid equivalence. The figurative standing interpretation remains attributed.",
+    "evidence": "MathWorld, Platonic Solid; source lines 1663–1688",
+    "next": "Use an explicit face-to-vertex dualization map wherever a geometric transformation is intended."
+  },
+  {
+    "id": "A10",
+    "title": "Two atlas descriptions identify the same avatar seat",
+    "lines": "179–184; 1555–1575; 1652–1662",
+    "status": "UNRESOLVED",
+    "kind": "Cross-section vocabulary",
+    "result": "One passage puts the human at the Filter. The alternate calls layer 4 the seat and layer 6 supporting structure, while its own coarse midpoint also acts as avatar/Filter. A static seat, routing interface and observer-dependent role need separate types.",
+    "evidence": "Source lines 1555–1575; the November 24 range assignment is recorded separately in A1.",
+    "next": "Specify maps from observer seat to fine layer, coarse membrane and decision locus."
+  }
+]

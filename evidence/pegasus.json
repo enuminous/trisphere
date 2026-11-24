@@ -1,0 +1,76 @@
+{
+  "animal": "PEGASUS",
+  "checker_sha256": "219ff263c9fdbb4c3e0081395ff930cfb23ab245ce7d258059ea6226f24e15e1",
+  "counts": {
+    "FAIL": 0,
+    "PASS": 2,
+    "UNRESOLVED": 1
+  },
+  "independent_replication": "not performed",
+  "input_sha256": "df060869b01402e72ec65c30be623975bd45c204615c6b802fc5d00c008834a2",
+  "required_claims": [
+    "BRIDGE"
+  ],
+  "results": [
+    {
+      "check": "affine_power_identity",
+      "dependencies": {},
+      "evidence": {
+        "left": [
+          "0",
+          "1"
+        ],
+        "right": [
+          "0",
+          "1"
+        ]
+      },
+      "evidence_status": "demonstrated",
+      "id": "MIRROR",
+      "reason": "Exact coefficient comparison over Q[n].",
+      "statement": "M applied twice equals the identity on the interval (composition coefficients).",
+      "verdict": "PASS"
+    },
+    {
+      "check": "cube_rotations",
+      "dependencies": {},
+      "evidence": {
+        "count": 24,
+        "determinants": [
+          1
+        ],
+        "expected": 24,
+        "scope": "Euclidean cube; not a junction model or a proof about glued complexes"
+      },
+      "evidence_status": "demonstrated",
+      "id": "CUBE",
+      "reason": "Enumerated orientation-preserving signed permutation matrices of an undecorated cube.",
+      "statement": "The cube has 24 proper signed-permutation symmetries (lines 1965\u20131967).",
+      "verdict": "PASS"
+    },
+    {
+      "check": "obligation",
+      "dependencies": {
+        "MIRROR": "PASS"
+      },
+      "evidence": {
+        "needed": [
+          "A radial vector field or hybrid rule coupled to fiber phase",
+          "An observable and independent calibration of work and loss"
+        ],
+        "notes_are_proof": false,
+        "supplied_notes": ""
+      },
+      "evidence_status": "unresolved",
+      "id": "BRIDGE",
+      "reason": "No executable witness checker for this obligation in v0.1.",
+      "statement": "The fiber geometry determines a radial evolution with a self-sustaining physical breath.",
+      "verdict": "UNRESOLVED"
+    }
+  ],
+  "schema_version": "pegasus-report/1",
+  "scope": "Only typed parameters and declared dependencies are checked; prose is not machine-parsed.",
+  "target": "Blueprint geometric-to-dynamical bridge, source lines 130\u2013155 and 246\u2013255",
+  "verdict": "UNRESOLVED",
+  "version": "0.1.0"
+}

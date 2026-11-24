@@ -1,0 +1,5 @@
+# Diagnostic extension · after the initial controls
+
+Cross-check the analytic center-return rule with a separately coded time integrator. For gamma in {0, 0.35, 1.2} and initial energy in {0.5, 2, 8}, integrate r′=v, v′=−r−gamma*v by RK4. Locate the first downward crossing of zero by bisection from the preceding state. Compare return time and pre-kick energy to the analytic predictions with tolerances 1e-7. Add J only after the energy comparison. Use the same unit mass and spring constant as the browser control. This is a second implementation sharing a model and auditor.
+
+Sweep gamma in {0, 0.05, 0.35, 1.2, 1.5}, J in {0, 0.25, 1.2, 5}, and E0 in {0, 0.5, 2, 8}. Stop at an observed absolute fixed-point error ≤1e-8, a detected wall violation, an analytic neutral/growing branch, no initial return event, or 256 iterations. For the conservative pumped case predict the first orbit whose maximum exceeds 12, and record it. These are matched diagnostic settings, separate from a preregistered physical test.

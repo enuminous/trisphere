@@ -1,0 +1,10 @@
+name = "triSphereLab"
+version = "1.0.0"
+defaultTargets = ["TriSphere"]
+
+[[require]]
+name = "mathlib"
+path = "formal-deps/mathlib"
+
+[[lean_lib]]
+name = "TriSphere"

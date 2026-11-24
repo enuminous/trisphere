@@ -1,0 +1,5 @@
+Zoo.Turtle.Verdict.notSupported
+Zoo.Cat.Verdict.removalHurt
+1
+'TargetAdapters.kick_removal' does not depend on any axioms
+'TargetAdapters.automatic_period_veto' depends on axioms: [propext, Classical.choice]

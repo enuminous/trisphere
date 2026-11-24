@@ -1,0 +1,13 @@
+Integrity PASS: 152 named release files. Standalone lab and ledgers reproduce.
+Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+prepare PASS
+lean-build PASS
+lean-axioms PASS
+negative-controls PASS
+zoo-suite PASS
+zoo-target PASS
+target-gates PASS
+experiments PASS
+sweep PASS
+browser PASS
+Replay complete. Logs and regenerated evidence are in replay-output/.

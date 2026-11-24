@@ -1,0 +1,207 @@
+$ python3 verify.py
+Static checks passed: 46 animals, 90 fixture entries, 186 original source hashes.
+This command checks static integrity only. Compiler and runtime evidence is recorded in BUILD_STATUS.md.
+EXIT 0
+$ lake build
+✔ [2/55] Built Core
+✔ [3/55] Built Bonobo
+✔ [4/55] Built Rhino
+✔ [5/55] Built Whale
+✔ [6/55] Built Axolotl
+✔ [7/55] Built Butterfly
+✔ [8/55] Built Falcon
+✔ [9/55] Built Phoenix
+✔ [10/55] Built Cobra
+✔ [11/55] Built Termite
+✔ [12/55] Built Mole
+✔ [13/55] Built Horse
+✔ [14/55] Built Orca
+✔ [15/55] Built Weasel
+✔ [16/55] Built Salmon
+✔ [17/55] Built Lynx
+✔ [18/55] Built Bison
+✔ [19/55] Built Registry
+✔ [20/55] Built Jellyfish
+✔ [21/55] Built Mantis
+✔ [22/55] Built Chameleon
+✔ [23/55] Built Beaver
+✔ [24/55] Built Wolf
+✔ [25/55] Built Dragon
+✔ [26/55] Built Elephant
+✔ [27/55] Built Crocodile
+✔ [28/55] Built Magpie
+✔ [29/55] Built Hedgehog
+✔ [30/55] Built Turtle
+✔ [31/55] Built Ant
+⚠ [32/55] Built Moth
+warning: ././././Moth.lean:12:21: unused variable `horizons`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+✔ [33/55] Built Shark
+✔ [34/55] Built Penguin
+✔ [35/55] Built Bat
+✔ [36/55] Built Raven
+✔ [37/55] Built Dolphin
+✔ [38/55] Built Cat
+✔ [39/55] Built Spider
+✔ [40/55] Built Crab
+✔ [41/55] Built Shepherd
+✔ [42/55] Built Pulse
+✔ [43/55] Built Fox
+✔ [44/55] Built Eagle
+✔ [45/55] Built Extensions
+✔ [46/55] Built Tortoise
+✔ [47/55] Built Owl
+✔ [48/55] Built Octopus
+✔ [49/55] Built Gecko
+✔ [50/55] Built Hive
+✔ [51/55] Built Zoo
+✔ [52/55] Built ExactThresholds
+✔ [53/55] Built ExtensionFixtures
+✔ [54/55] Built SourceRecords
+Build completed successfully.
+EXIT 0
+$ lake env lean -DwarningAsError=true Audit.lean
+Axiom audit passed: 2797 safe declarations, 1255 theorem declarations (including generated lemmas).
+EXIT 0
+$ python3 scripts/test_axiom_audit.py
+Audit correctly rejected public axiom.
+Audit correctly rejected private axiom.
+Audit correctly rejected placeholder.
+Audit correctly rejected native proof.
+EXIT 0
+$ python3 scripts/extension_fixtures.py
+Source-derived finite decision certificates: {'chimera': 128, 'circus': 96, 'monster': 384, 'woodpecker': 3, 'nightingale': 16, 'nightingale_root': 16} total 643
+EXIT 0
+$ python3 scripts/report_fixtures.py
+Generated complete-record Python/Lean certificates: {'chimera': 128, 'circus': 256, 'monster': 1048}
+Run lake env lean -DwarningAsError=true .lake/SourceReportFixtures.lean to check them.
+EXIT 0
+$ lake env lean -DwarningAsError=true .lake/SourceReportFixtures.lean
+Axiom audit passed: 4229 safe declarations, 2687 theorem declarations (including generated lemmas).
+EXIT 0
+$ python3 scripts/threshold_fixtures.py
+Generated 2100 exact-arithmetic source certificates; all included binary64 intermediates agree with Fraction.
+EXIT 0
+$ lake env lean -DwarningAsError=true .lake/ThresholdFixtures.lean
+Axiom audit passed: 4897 safe declarations, 3355 theorem declarations (including generated lemmas).
+EXIT 0
+$ python3 scripts/test_alternative_report.py
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.022s
+
+OK
+EXIT 0
+$ lake exe regression
+⚠ [18/102] Replayed Moth
+warning: ././././Moth.lean:12:21: unused variable `horizons`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+✔ [51/102] Built Tortoise:c.o
+✔ [52/102] Built Owl:c.o
+✔ [53/102] Built Octopus:c.o
+✔ [54/102] Built Gecko:c.o
+✔ [55/102] Built Crab:c.o
+✔ [56/102] Built Shepherd:c.o
+✔ [57/102] Built Pulse:c.o
+✔ [58/102] Built Cat:c.o
+✔ [59/102] Built Fox:c.o
+✔ [60/102] Built Spider:c.o
+✔ [61/102] Built Raven:c.o
+✔ [62/102] Built Dolphin:c.o
+✔ [63/102] Built Ant:c.o
+✔ [64/102] Built Moth:c.o
+✔ [65/102] Built Shark:c.o
+✔ [66/102] Built Crocodile:c.o
+✔ [67/102] Built Penguin:c.o
+✔ [68/102] Built Bat:c.o
+✔ [69/102] Built Dragon:c.o
+✔ [70/102] Built Core:c.o
+✔ [71/102] Built Hedgehog:c.o
+✔ [72/102] Built Wolf:c.o
+✔ [73/102] Built Chameleon:c.o
+✔ [74/102] Built Turtle:c.o
+✔ [75/102] Built Magpie:c.o
+✔ [76/102] Built Elephant:c.o
+✔ [77/102] Built Jellyfish:c.o
+✔ [78/102] Built Beaver:c.o
+✔ [79/102] Built Bison:c.o
+✔ [80/102] Built Orca:c.o
+✔ [81/102] Built Mole:c.o
+✔ [82/102] Built Mantis:c.o
+✔ [83/102] Built Weasel:c.o
+✔ [84/102] Built Salmon:c.o
+✔ [85/102] Built Horse:c.o
+✔ [86/102] Built Phoenix:c.o
+✔ [87/102] Built Lynx:c.o
+✔ [88/102] Built Termite:c.o
+✔ [89/102] Built Whale:c.o
+✔ [90/102] Built Rhino:c.o
+✔ [91/102] Built Cobra:c.o
+✔ [92/102] Built Falcon:c.o
+✔ [93/102] Built Bonobo:c.o
+✔ [94/102] Built Axolotl:c.o
+✔ [95/102] Built Butterfly:c.o
+✔ [96/102] Built Hive:c.o
+✔ [97/102] Built Eagle:c.o
+✔ [98/102] Built Zoo:c.o
+✔ [99/102] Built Regression
+✔ [100/102] Built Registry:c.o
+✔ [101/102] Built Regression:c.o
+✔ [102/102] Built regression
+All 90 upstream-generated fixtures passed.
+EXIT 0
+$ lake exe zoo46
+⚠ [18/102] Replayed Moth
+warning: ././././Moth.lean:12:21: unused variable `horizons`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+✔ [100/102] Built Main
+✔ [101/102] Built Main:c.o
+✔ [102/102] Built zoo46
+Monolithic Zoo: 46 selected-kernel formalization modules
+TORTOISE
+OWL
+OCTOPUS
+GECKO
+HIVE
+EAGLE
+CRAB
+SHEPHERD
+PULSE
+CAT
+FOX
+SPIDER
+RAVEN
+DOLPHIN
+ANT
+MOTH
+SHARK
+PENGUIN
+BAT
+HEDGEHOG
+CROCODILE
+DRAGON
+TURTLE
+MAGPIE
+WOLF
+ELEPHANT
+CHAMELEON
+JELLYFISH
+BEAVER
+MANTIS
+BISON
+WEASEL
+SALMON
+ORCA
+MOLE
+LYNX
+HORSE
+TERMITE
+PHOENIX
+COBRA
+WHALE
+FALCON
+RHINO
+BONOBO
+AXOLOTL
+BUTTERFLY
+EXIT 0

@@ -1,0 +1,6 @@
+false mirror center: rejected (exit 1)
+is false
+invented axiom: rejected (exit 1)
+/workspace/scratch/e00400b44887/bundle/tmpo9iqwm7j/Probe.lean:57:0: error: Unapproved axiom AuditProbe.fabrication used by AuditProbe.fabrication
+placeholder proof: rejected (exit 1)
+/workspace/scratch/e00400b44887/bundle/tmpo9iqwm7j/Probe.lean:57:0: error: Unapproved axiom sorryAx used by AuditProbe.hole

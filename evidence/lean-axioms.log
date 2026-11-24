@@ -1,0 +1,74 @@
+TriSphere.mirror_involution (n : TriSphere.Layer) : TriSphere.mirror (TriSphere.mirror n) = n
+'TriSphere.mirror_involution' depends on axioms: [propext, Quot.sound]
+TriSphere.midpoint_unique (n : TriSphere.Layer) : TriSphere.mirror n = n ↔ n = 6
+'TriSphere.midpoint_unique' depends on axioms: [propext, Quot.sound]
+TriSphere.coarse_mirror (n : TriSphere.Layer) :
+  TriSphere.coarse (TriSphere.mirror n) = TriSphere.coarseMirror (TriSphere.coarse n)
+'TriSphere.coarse_mirror' depends on axioms: [propext, Quot.sound]
+TriSphere.coarse_surjective (n : Fin 5) : ∃ x, TriSphere.coarse x = n
+'TriSphere.coarse_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.no_coarse_step :
+  ¬∃ f, ∀ (x : TriSphere.Layer), f (TriSphere.coarse x) = TriSphere.coarse (TriSphere.stepOut x)
+'TriSphere.no_coarse_step' depends on axioms: [propext, Quot.sound]
+TriSphere.phase_period (t : ℕ) :
+  TriSphere.phaseRadius (TriSphere.phaseAt (t + 24)) = TriSphere.phaseRadius (TriSphere.phaseAt t)
+'TriSphere.phase_period' depends on axioms: [propext, Quot.sound]
+TriSphere.phase_orientation_loss :
+  TriSphere.phaseRadius (TriSphere.phaseAt 5) = TriSphere.phaseRadius (TriSphere.phaseAt 19) ∧
+    TriSphere.phaseRadius (TriSphere.phaseAt 6) ≠ TriSphere.phaseRadius (TriSphere.phaseAt 20)
+'TriSphere.phase_orientation_loss' depends on axioms: [propext, Quot.sound]
+TriSphere.face_pairs : 12 * 12 = 144
+'TriSphere.face_pairs' does not depend on any axioms
+TriSphere.hopf_norm (a b c d : ℝ) :
+  TriSphere.hx a b c d ^ 2 + TriSphere.hy a b c d ^ 2 + TriSphere.hz a b c d ^ 2 = TriSphere.norm4 a b c d ^ 2
+'TriSphere.hopf_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.hopf_phase (a b c d u v : ℝ) (hu : u ^ 2 + v ^ 2 = 1) :
+  let A := a * u - b * v;
+  let B := a * v + b * u;
+  let C := c * u - d * v;
+  let D := c * v + d * u;
+  TriSphere.hx A B C D = TriSphere.hx a b c d ∧
+    TriSphere.hy A B C D = TriSphere.hy a b c d ∧ TriSphere.hz A B C D = TriSphere.hz a b c d
+'TriSphere.hopf_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.shell_zero (a b c d : ℝ) (h : TriSphere.norm4 a b c d = 0) : a = 0 ∧ b = 0 ∧ c = 0 ∧ d = 0
+'TriSphere.shell_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.radius_two_control : TriSphere.hx 2 0 0 0 = 4 ∧ TriSphere.hx 2 0 0 0 ≠ 1
+'TriSphere.radius_two_control' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.radius_branch (t : ℝ) : HasDerivAt (fun s => 12 + s ^ 3) (3 * t ^ 2) t
+'TriSphere.radius_branch' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.stationary_crossing :
+  HasDerivAt (fun s => 12 + s ^ 3) 0 0 ∧ (∀ (t : ℝ), 0 < t → 12 < 12 + t ^ 3) ∧ ∀ t < 0, 12 + t ^ 3 < 12
+'TriSphere.stationary_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.energy_rate (r v U g : ℝ → ℝ) (γ t : ℝ) (hr : HasDerivAt r (v t) t) (hv : HasDerivAt v (-g (r t) - γ * v t) t)
+  (hU : HasDerivAt U (g (r t)) (r t)) : HasDerivAt (TriSphere.energy r v U) (-γ * v t ^ 2) t
+'TriSphere.energy_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.periodic_level (E : ℝ → ℝ) (T : ℝ) (hT : 0 < T) (hm : Antitone E) (hp : Function.Periodic E T) (x : ℝ) :
+  E x = E 0
+'TriSphere.periodic_level' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.fixed_drive_periodic_velocity_zero (r v U g : ℝ → ℝ) (γ T : ℝ) (hγ : 0 < γ) (hT : 0 < T)
+  (hr : ∀ (t : ℝ), HasDerivAt r (v t) t) (hv : ∀ (t : ℝ), HasDerivAt v (-g (r t) - γ * v t) t)
+  (hU : ∀ (x : ℝ), HasDerivAt U (g x) x) (pr : Function.Periodic r T) (pv : Function.Periodic v T) (t : ℝ) : v t = 0
+'TriSphere.fixed_drive_periodic_velocity_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.coast_accel_ne_zero (γ v : ℝ) (hg : 0 < γ) (hv : v ≠ 0) : -γ * v ≠ 0
+'TriSphere.coast_accel_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.kick_fixed (q J : ℝ) (hq : q < 1) : TriSphere.kick q J (J / (1 - q)) = J / (1 - q)
+'TriSphere.kick_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.kick_deviation (q J E A : ℝ) (h : TriSphere.kick q J A = A) : TriSphere.kick q J E - A = q * (E - A)
+'TriSphere.kick_deviation' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.kick_iterate (q J E A : ℝ) (h : TriSphere.kick q J A = A) (n : ℕ) :
+  (TriSphere.kick q J)^[n] E - A = q ^ n * (E - A)
+'TriSphere.kick_iterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.filter_conservation (total kept : ℕ) (h : kept ≤ total) : kept + (total - kept) = total
+'TriSphere.filter_conservation' depends on axioms: [propext, Quot.sound]
+TriSphere.a_destination_does_not_fix_a_path :
+  (fun t => 12 * (1 - t)) 0 = (fun t => 12 * (1 - t) ^ 2) 0 ∧
+    (fun t => 12 * (1 - t)) 1 = (fun t => 12 * (1 - t) ^ 2) 1 ∧
+      (fun t => 12 * (1 - t)) (1 / 2) ≠ (fun t => 12 * (1 - t) ^ 2) (1 / 2)
+'TriSphere.a_destination_does_not_fix_a_path' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.drive_primitive (V W slope drive : ℝ → ℝ) (hV : ∀ (x : ℝ), HasDerivAt V (slope x) x)
+  (hW : ∀ (x : ℝ), HasDerivAt W (drive x) x) (x : ℝ) : HasDerivAt (fun y => V y - W y) (slope x - drive x) x
+'TriSphere.drive_primitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+TriSphere.kick_converges (q J E : ℝ) (h0 : 0 ≤ q) (h1 : q < 1) :
+  Filter.Tendsto (fun n => (TriSphere.kick q J)^[n] E) Filter.atTop (nhds (J / (1 - q)))
+'TriSphere.kick_converges' depends on axioms: [propext, Classical.choice, Quot.sound]
+Axiom audit passed: 56 safe declarations, 43 theorem declarations (including generated lemmas).
