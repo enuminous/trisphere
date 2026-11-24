@@ -1,0 +1,84 @@
+--- a/blueprint.txt
++++ b/blueprint.txt
+@@ -230,26 +230,26 @@
+    "the avatar pumps" are different claims. The mirror pumping would
+    be the system closing itself. The avatar pumping is intent driving
+    the loop from outside the state. The second one is what is meant.
+-   This is a driven damped oscillator. Damping alone would spiral in
+-   and stop at the bottom — the heat death of the loop. But damping
+-   with a steady drive settles into a limit cycle: one repeating orbit
+-   that it returns to from any starting point, forever, while still
+-   losing energy the whole time. Periodicity that does not come from
+-   conservation. Dissipation that lets things be stored. A stable
+-   rhythm that survives a nudge. The loop sustains itself because the
+-   centre gives back what the trip out spent.
+-   The picture that makes this land in one line: it is a pendulum
+-   clock. Gravity is the well, gamma is the friction on the mechanism,
+-   and the drive at rho = 0 is the escapement — the kick it gets once
+-   per swing at the bottom. It loses energy constantly, it never stops,
+-   and it is a limit cycle.
+-   This one equation does two things the first nine assume, and one
+-   thing it does not. It makes the periodicity (equation 8) automatic:
+-   the limit cycle repeats, so Phi(rho, t + T) = Phi(rho, t) is what
+-   you get, not what you impose. And it answers what makes rho move:
+-   the gradient, and the drive. What it does not do is make v(12) = 0
+-   a consequence: the turn at 12 is a boundary condition (equation 4),
+-   the wall. A flat potential band exerts no force, so nothing in the band can
++   A moving oscillator loses energy to damping. Once the motion has
++   started, a kick on each incoming return to the centre can replace
++   the energy lost during the trip and sustain a repeating breath. A
++   force set by position alone supplies zero net work over the round
++   trip. If the oscillator starts at rest at the centre, the
++   return-triggered pump has no event to act on. It needs a separate
++   push to start.
++   Picture a pendulum clock. Gravity supplies the restoring force,
++   friction drains energy, and the escapement gives a timed push as
++   the pendulum swings. In the model, the centre pump plays that last
++   role.
++   Equation 10 describes motion between kicks. The kick is a separate
++   event rule. In the lab’s damped harmonic example, each trip retains
++   a fraction q of the launch energy, with 0 < q < 1. Each incoming
++   return adds energy J > 0 and sends the motion outward again. So
++   E_next = q E + J. For positive launch energy and excursions inside
++   the shell, the return energy approaches J/(1−q). At that energy the
++   trip repeats exactly. Equation 8’s periodicity for a whole density
++   field still needs a law for how the density moves. Equation 4
++   supplies the boundary condition at the wall. A flat potential band exerts no force, so nothing in the band can
+    turn the flow — with damping set aside, a flow entering the band coasts at
+    constant speed and turns at the wall. With damping present the speed decays
+    across the band, and only a flow fast enough on entry reaches the wall. The
+@@ -430,12 +430,14 @@
+    background potential the structure sits in, in which case gravity is
+    a name rather than a mechanism, or the layers source it. This is
+    left open.
+-   Two fates, one equation, and intent sets k. Wide open, the system
+-   has a stable limit cycle: the eternal breath, recovering from any
+-   nudge. Closing k down, the limit cycle shrinks and dies at the
+-   centre, and the flow goes stagnant. That is heat death, and it is
+-   not a metaphor — it is a bifurcation. Either side of the bifurcation
+-   point is the Big Bang and the Big Crunch. The Big Bang is the CRP,
++   The blueprint proposes that intent sets the valve opening k. If k
++   controls the energy delivered on each return, reducing that kick
++   reduces the steady excursion in the lab’s harmonic example. With
++   the pump shut, damping drains a moving oscillator’s energy. A law
++   connecting k to the kick and a test of the proposed bifurcation
++   would be needed to locate a transition in the blueprint. Beth
++   interprets expansion and collapse as the Big Bang and the Big
++   Crunch. The Big Bang is the CRP,
+    the singularity, expanding into the full 13-layer architecture — and it
+    is the moment the universe recognised itself as both empty and held.
+    By recognising its emptiness within the asymptotic boundary, the
+@@ -496,10 +498,9 @@
+    geometry. The damping term claims the structure bleeds energy
+    somewhere, and the drive term claims the avatar puts it back — real
+    claims, and the kind a physicist respects, because they are
+-   falsifiable. Eight of the nine conditions become consequences of
+-   one dynamical law plus a potential, a loss term, and a drive; the
+-   ninth — v(12) = 0, the turn at the wall — remains a boundary
+-   condition. That is the difference between a shape and a mechanism.
++   falsifiable. The timed pump gives one mechanism for a repeating trajectory under
++   the conditions above. The geometry and the wall condition enter
++   separately. A derivation of the full density cycle remains open.
+    There are four free inputs here: the three shelves, the loss term,
+    the drive, and the valve parameter. A physicist will ask which one
+    would be changed if the model fails. That question is left open —

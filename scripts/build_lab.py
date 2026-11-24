@@ -14,6 +14,7 @@ def build():
         proofs.append(dict(name=n,log=match.group()))
     data={k:json.loads((ROOT/(k+'.json')).read_text()) for k in ('claims','roster')}
     data.update(report=(ROOT/"AUDIT.md").read_text(),sweep=json.loads((ROOT/"evidence/sweep.json").read_text()),lean=lean,proofs=proofs,source=(ROOT/'source/blueprint.md').read_text().splitlines())
+    data['correctedSource'] = (ROOT / 'source/blueprint-corrected.txt').read_text()
     template=(ROOT/'lab/page.html').read_text()
     for token,value in [('__APP__',(ROOT/'lab/app.js').read_text()),('__ENGINE__',(ROOT/'lab/engine.js').read_text()),('__DATA__',json.dumps(data,ensure_ascii=False).replace('<','\\u003c'))]:
         template=template.replace(token,value)

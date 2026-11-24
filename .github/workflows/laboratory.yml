@@ -56,19 +56,19 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
-      - name: Publish the verified first edition
+      - name: Publish the verified edition
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: lab-v1.0.0
+          RELEASE_TAG: lab-v1.0.1
         shell: bash
         run: |
           set -euo pipefail
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            echo "The first edition is already published."
+            echo "This edition is already published."
             exit 0
           fi
           archive="$RUNNER_TEMP/TriSphere_Laboratory.zip"
           git archive --format=zip --output="$archive" "$GITHUB_SHA"
           gh release create "$RELEASE_TAG" "$archive" \
-            --target "$GITHUB_SHA" --title "Tri-Sphere Laboratory 1.0" \
-            --notes "Standalone browser laboratory, Lean 4.19.0 proofs, full Zoo audit, simulation results, and offline dependency bundles. Open index.html after extracting the ZIP. Run python3 replay.py to reproduce the checks."
+            --target "$GITHUB_SHA" --title "Tri-Sphere Laboratory 1.0.1" \
+            --notes "Corrected Equation 10 and the five-position GPS interpretation. Standalone browser laboratory, Lean 4.19.0 proofs, full Zoo audit, simulation results, and offline dependency bundles. Open index.html after extracting the ZIP. Run python3 replay.py to reproduce the checks."

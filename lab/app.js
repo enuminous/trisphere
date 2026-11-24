@@ -40,7 +40,7 @@ function frame(id){
 function drawAtlas(){
   const n=Number($("radius").value),angle=Number($("camera").value), group=TriLab.branch(n);
   txt("rVal",n);txt("cameraVal",angle+"°");txt("layerGroup",TriLab.groups[group]);txt("layerName",TriLab.NAMES[n]);
-  txt("layerCaption",n===0?"The shell equation forces z₁ = z₂ = 0. Its fiber is a point.":n===6?"Layer 6 is the only fixed point of the mirror. The blueprint places the human choice here.":"This layer and its mirror are equally far from the Filter in the indexed atlas.");
+  txt("layerCaption",n===0?"At radius zero the shell is a single point. Hopf circles occur on shells of positive radius.":n===6?"Layer 6 is the only fixed point of the mirror. The blueprint places the human choice here.":"This layer and its mirror are equally far from the Filter in the indexed atlas.");
   txt("mirrorVal",12-n);txt("hopfVal",n*n);txt("binVal",group+" / 4");txt("atlasCoord","ρ = "+n+"  •  M(ρ) = "+(12-n));txt("fiberFoot",n?"24 PHASE ORBITS":"DEGENERATE SHELL");
   $("mirror").textContent=n===6?"Mirror fixes layer 6":"Show mirror · "+(12-n);
   const {ctx,w,h}=frame("fibers"),cx=w/2,cy=h/2,α=angle*Math.PI/180;
@@ -106,7 +106,9 @@ function dynamics(){
  txt("chartName",({r:"RADIAL POSITION",e:"ENERGY",v:"VELOCITY"})[key]);
  txt("runStatus",trace.status);txt("runSummary","Last sample at t = "+f(end.t)+" • ρ = "+f(end.r)+" • v = "+f(end.v)+" • E = "+f(end.e)+".");
  const en=m==="fixed"?"E = v²/2 + V − ∫D dρ. For the smooth fixed drive, dE/dt = −γv². With positive damping, a nonconstant periodic state is impossible.":m==="coast"?"With zero drive and flat V, v(t) = v₀ exp(−γt). At the threshold the wall is approached asymptotically.":g===0?"With γ = 0, q = 1. Removing the kick conserves energy; adding J gives linear growth per event.":"At a center return Eₙ₊₁ = qEₙ + J. Here q = "+f(trace.q,5)+" and E* = "+f((m==="kick"?k:0)/(1-trace.q),5)+". Returns observed: "+trace.events.length+".";
- txt("energyNote",en);drawTrace(trace,key);
+ const resting = (m === "kick" || m === "removed") && ini === 0;
+ txt("energyNote", resting ? "Zero launch energy. The oscillator stays at rest, so there is no incoming return and no kick. Raise the initial energy to launch it." : en);
+ drawTrace(trace,key);
 }
 for(const id of ["mode","drag","drive","initial","quantity"])$(id).oninput=dynamics;
 $("resetDyn").onclick=()=>{for(const [id,v] of [["mode","fixed"],["drag",".35"],["drive","1.2"],["initial","2"],["quantity","r"]])$(id).value=v;dynamics();};
@@ -129,10 +131,20 @@ function sourceAt(range){
    const nums=part.match(/\d+/g)||["1"],start=Number(nums[0]),end=Math.min(Number(nums[1]||start),D.source.length);
    return D.source.slice(start-1,end).map((line,i)=>(start+i)+"  "+line).join("\n");
  });
+ txt("sourceTitle","Original audit source · selected lines");
  txt("sourceText",sections.join("\n\n⋯\n\n"));
  $("sourceDialog").showModal();
 }
-$("viewSource").onclick=()=>{txt("sourceText",D.source.map((s,i)=>(i+1)+"  "+s).join("\n"));$("sourceDialog").showModal();};
+$("viewSource").onclick = () => {
+ txt("sourceTitle","Corrected blueprint · Monolithic edition");
+ txt("sourceText",D.correctedSource);
+ $("sourceDialog").showModal();
+};
+$("viewAuditSource").onclick = () => {
+ txt("sourceTitle","Original audit source · numbered lines");
+ txt("sourceText",D.source.map((s,i)=>(i+1)+"  "+s).join("\n"));
+ $("sourceDialog").showModal();
+};
 function showRows(){
  const st=$("verdict").value,q=$("search").value.trim().toLowerCase();visible=D[ledger].filter(r=>(!st||r.status===st)&&Object.values(r).join(" ").toLowerCase().includes(q));
  txt("shown",visible.length+" of "+D[ledger].length+(ledger==="claims"?" claim findings":" named operations"));

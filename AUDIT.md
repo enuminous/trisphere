@@ -19,6 +19,14 @@ The target is the attached plain-text manuscript, including both parts, dated co
 
 The first row counts propositions. The second counts outcomes against the declared **target** question for each operation. Neither row estimates the probability that the physical framework is true. The target-specific runs were CAT, TURTLE, WEASEL, CHIMERA, CIRCUS, MONSTER and PEGASUS. Several tools consume human-supplied fields. For example, TURTLE enforces a veto whose mathematical basis is the energy theorem; counting its result again would double-count the same evidence.
 
+## Equation 10 correction, 24 November 2026
+
+Beth’s revised text calls the thirteen layers the atlas and the five positions the observer’s GPS view of a single oscillator. The observer sits at Layer 6. The inner and outer membranes represent inhale and exhale. Beth describes the emergence of additional layers from Filter imbalance as an interpretation. The revised text also restricts Hopf circles to positive radii and states that damping slows motion on the flat shelf.
+
+The Monolithic edition corrects the remaining automatic-cycle claim. The laboratory’s incoming-center event needs a positive launch energy for a first return. In the confined harmonic model with positive damping and positive energy per kick, successive return energies approach a positive fixed point. At the fixed point the orbit repeats exactly. Starting at rest produces zero returns and zero kicks. Periodicity of a whole density field and the proposed valve bifurcation each require additional dynamics.
+
+The original findings and numbered source links above refer to the manuscript frozen for the first audit. The editorial correction uses the later public text with SHA-256 `9db10f701efa9d485353f2ce192ade0e4c43d75b9af843781c5a2d9dc7a17a01`. [Beth’s public text](https://tri-sphere-text.abethjones.workers.dev/) · [Corrected edition](source/blueprint-corrected.txt) · [Exact text changes](source/equation-10.patch)
+
 ## Energy accounting
 
 Write the smooth fixed-valve equation as

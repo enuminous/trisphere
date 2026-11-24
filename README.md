@@ -2,6 +2,8 @@
 
 [Open the interactive laboratory](https://enuminous.github.io/trisphere/) · [Simulation report](simulation/README.md) · [Simulation plot](simulation/files/TriSphere_Simulation.png) · [Download simulation data and replay code](simulation/TriSphere_Simulation_Run.zip)
 
+[Read the corrected blueprint](source/blueprint-corrected.txt) · [Equation 10 changes](source/equation-10.patch). The five GPS positions describe one oscillator viewed from the Filter. In the laboratory an incoming return can trigger a sustaining kick. Starting at rest requires a separate launch.
+
 The timed-kick simulation at γ = 0.35 and J = 1.2 attained a steady peak radius of 1.474. A second run initialized on its steady orbit grazed layer 12 at J ≈ 79.522 in the same dimensionless harmonic model. [Layer passage times](simulation/results/layer_passages.csv)
 
 Open **[index.html](index.html)** after extraction. The complete browser lab works from one file, offline, with no installation. It includes the 13-layer atlas and Hopf-fiber viewer, filter dials, four oscillator experiments, a five-versus-thirteen comparison, an 80-case parameter sweep, the claim and Zoo ledgers, the manuscript text and the checked Lean proof register. Use the controls to export the run trace, filtered ledger, sweep or Lean source.
@@ -37,12 +39,12 @@ Use `python3 scripts/prepare_lean.py --source-only` on a fresh extraction to omi
 
 The live site is served from the root of the `gh-pages` branch. That branch contains the standalone `index.html` and `.nojekyll`. The complete audit and simulation sources live on `main`. For branch publication, copy the verified HTML to `gh-pages` after changing the lab. [Open the deployed laboratory](https://enuminous.github.io/trisphere/)
 
-The included workflow replays the Lean build and audit on pushes and pull requests. After the first successful push to `main`, it packages the tracked repository files into a flat downloadable ZIP and creates the versioned first release. Subsequent pushes preserve that edition. [GitHub releases](https://github.com/enuminous/trisphere/releases)
+The included workflow replays the Lean build and audit on pushes and pull requests. After a verified push to `main`, it packages the tracked files into a flat ZIP for the configured edition. Each published edition keeps its own tag and archive. [GitHub releases](https://github.com/enuminous/trisphere/releases)
 
 For continuous deployment from `main`, select **GitHub Actions** under **Settings → Pages → Build and deployment** and set the Actions repository variable `TRISPHERE_ACTIONS_PAGES` to `true`. The workflow then deploys the standalone page after successful verification. For offline use, extract the ZIP and open `index.html`. Preserve the dotfiles if copying the full project into another repository. [GitHub Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 
 ## Evidence and attribution
 
-The attached manuscript remains attributed to Beth / TGS:ATE / ORION. The proof, diagnostic models and claim mappings are an audit of that manuscript. Upstream project notices accompany their respective sources. A content digest establishes the bytes used in this run. Independent physical data, independent reviewer approval and a hosted GitHub Actions run are outside the recorded evidence.
+The attached manuscript remains attributed to Beth / TGS:ATE / ORION. The proof, diagnostic models and claim mappings are an audit of that manuscript. Upstream project notices accompany their respective sources. A content digest establishes the bytes used in this run. GitHub Actions replayed the first edition. Independent physical data and external scientific review remain open. [First-edition verification](https://github.com/enuminous/trisphere/actions/runs/45494471009)
 
 [Run record](evidence/RUN.md) · [Original protocol](protocol/criteria.md) · [Numerical follow-up protocol](protocol/extension.md) · [Source manuscript](source/blueprint.md)
