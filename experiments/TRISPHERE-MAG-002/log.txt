@@ -1,0 +1,245 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "summary": [
+    {
+      "N": 24,
+      "r": 0.2,
+      "n": 24,
+      "ground_hits": 10,
+      "positive": 7,
+      "negative": 7,
+      "max_gap": 0.033974596215661235,
+      "converged": 24
+    },
+    {
+      "N": 24,
+      "r": 0.5,
+      "n": 24,
+      "ground_hits": 0,
+      "positive": 9,
+      "negative": 9,
+      "max_gap": 0.08346297058522134,
+      "converged": 24
+    },
+    {
+      "N": 24,
+      "r": 0.8,
+      "n": 24,
+      "ground_hits": 4,
+      "positive": 10,
+      "negative": 10,
+      "max_gap": 0.07250441734116142,
+      "converged": 24
+    },
+    {
+      "N": 48,
+      "r": 0.2,
+      "n": 24,
+      "ground_hits": 8,
+      "positive": 8,
+      "negative": 8,
+      "max_gap": 0.033974596216056474,
+      "converged": 24
+    },
+    {
+      "N": 48,
+      "r": 0.5,
+      "n": 24,
+      "ground_hits": 0,
+      "positive": 10,
+      "negative": 10,
+      "max_gap": 0.08333333333406145,
+      "converged": 24
+    },
+    {
+      "N": 48,
+      "r": 0.8,
+      "n": 24,
+      "ground_hits": 0,
+      "positive": 11,
+      "negative": 11,
+      "max_gap": 0.07114566818133061,
+      "converged": 24
+    },
+    {
+      "N": 96,
+      "r": 0.2,
+      "n": 24,
+      "ground_hits": 4,
+      "positive": 10,
+      "negative": 10,
+      "max_gap": 0.007279254471636354,
+      "converged": 24
+    },
+    {
+      "N": 96,
+      "r": 0.5,
+      "n": 24,
+      "ground_hits": 0,
+      "positive": 12,
+      "negative": 12,
+      "max_gap": 0.08322623419645725,
+      "converged": 24
+    },
+    {
+      "N": 96,
+      "r": 0.8,
+      "n": 24,
+      "ground_hits": 0,
+      "positive": 12,
+      "negative": 12,
+      "max_gap": 0.07404958367688208,
+      "converged": 24
+    }
+  ],
+  "spectral": [
+    {
+      "r": 0,
+      "q_deg": 180.0,
+      "odd": 1.653599483775656e-15,
+      "even": 1.3287852994625807e-15,
+      "flip": 0.0,
+      "zero_exchange": 2.7344889024387672e-15,
+      "peak": 5.895511963844938e-15
+    },
+    {
+      "r": 0.2,
+      "q_deg": 180.0,
+      "odd": 1.653599483775656e-15,
+      "even": 1.3287852994625807e-15,
+      "flip": 0.0,
+      "zero_exchange": 2.7344889024387672e-15,
+      "peak": 5.895511963844938e-15
+    },
+    {
+      "r": 0.25,
+      "q_deg": 180.0,
+      "odd": 1.653599483775656e-15,
+      "even": 1.3287852994625807e-15,
+      "flip": 0.0,
+      "zero_exchange": 2.7344889024387672e-15,
+      "peak": 5.895511963844938e-15
+    },
+    {
+      "r": 0.3,
+      "q_deg": 146.4426902380793,
+      "odd": 0.46855682212144995,
+      "even": 3.642866875874057e-15,
+      "flip": 0.0,
+      "zero_exchange": 2.622877110502491e-15,
+      "peak": 0.9872994331237536
+    },
+    {
+      "r": 0.4,
+      "q_deg": 128.68218745348943,
+      "odd": 0.488176184428358,
+      "even": 3.0501124757737543e-15,
+      "flip": 0.0,
+      "zero_exchange": 3.0135183822794578e-15,
+      "peak": 0.987308505759226
+    },
+    {
+      "r": 0.5,
+      "q_deg": 120.00000000000001,
+      "odd": 0.5136937188380339,
+      "even": 3.5107796502383475e-15,
+      "flip": 0.0,
+      "zero_exchange": 3.4041596540564243e-15,
+      "peak": 0.9873593677414951
+    },
+    {
+      "r": 0.6,
+      "q_deg": 114.62431835216408,
+      "odd": 0.5195928656303356,
+      "even": 3.799932611742168e-15,
+      "flip": 0.0,
+      "zero_exchange": 2.9019065903431814e-15,
+      "peak": 0.9873446533492638
+    },
+    {
+      "r": 0.8,
+      "q_deg": 108.20995686428301,
+      "odd": 0.5078567090395488,
+      "even": 2.7426349416463027e-15,
+      "flip": 0.0,
+      "zero_exchange": 3.23674196615201e-15,
+      "peak": 0.9872974230712686
+    },
+    {
+      "r": 1,
+      "q_deg": 104.47751218592994,
+      "odd": 0.534688866701522,
+      "even": 3.348069446876205e-15,
+      "flip": 0.0,
+      "zero_exchange": 2.7344889024387672e-15,
+      "peak": 0.9872651209529596
+    }
+  ],
+  "oscillator": {
+    "period": 9.638611257581818,
+    "loss": 5.000000000009045,
+    "effective_time": 12.714661894225346,
+    "tests": [
+      {
+        "seed": 0,
+        "clock_error": 1.2057911929256254e-10,
+        "reflection_error": 0.0
+      },
+      {
+        "seed": 1,
+        "clock_error": 1.3130784276550798e-10,
+        "reflection_error": 0.0
+      },
+      {
+        "seed": 2,
+        "clock_error": 1.2364686891004309e-09,
+        "reflection_error": 0.0
+      },
+      {
+        "seed": 3,
+        "clock_error": 2.05552012396657e-10,
+        "reflection_error": 0.0
+      },
+      {
+        "seed": 4,
+        "clock_error": 1.3262133211416559e-09,
+        "reflection_error": 0.0
+      },
+      {
+        "seed": 5,
+        "clock_error": 1.5114199211464314e-10,
+        "reflection_error": 0.0
+      },
+      {
+        "seed": 6,
+        "clock_error": 1.0676614302812117e-10,
+        "reflection_error": 0.0
+      },
+      {
+        "seed": 7,
+        "clock_error": 5.497462888457306e-09,
+        "reflection_error": 0.0
+      }
+    ]
+  },
+  "checks": {
+    "exact_bound": true,
+    "three_step_at_half": true,
+    "pitch_not_universal": true,
+    "reflection_energy": true,
+    "reflection_chirality": true,
+    "ground_bound_respected": true,
+    "odd_parity": true,
+    "chirality_flip": true,
+    "zero_exchange": true,
+    "collinear_null": true,
+    "spiral_signal": true,
+    "return_orbit": true,
+    "clock_equivalence": true,
+    "clock_reflection": true
+  }
+}
