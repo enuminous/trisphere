@@ -1,0 +1,5 @@
+# Publication record — 2026-11-27
+
+This directory preserves the original exploratory report, pre-execution protocol, replay code, pinned dependencies and original full-package SHA-256 manifest. The archive manifest was checked against the original local ZIP before publication. The original generated summary.json, results.json and log.txt (and MAG-004 exit_code.txt) remain in the complete local archive and were not transferred to GitHub. The report records the principal numerical results. Replaying run.py regenerates the JSON outputs; runtime/log hashes are not expected to be portable. Use the pre-execution manifest to verify the inputs it covers. The original full-package manifest is an archival record, not a claim that every listed output is included in this directory.
+
+This publication is not independent replication, preregistration or physical validation. Historical references in the preserved report to the repository being unchanged describe the time of the run, before this publication. No changes were made to the main lab interface or claims ledger.
