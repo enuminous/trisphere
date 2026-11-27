@@ -1,0 +1,37 @@
+{
+  "note": "Exploratory analytic reduced-sector similarity only; generic full quantum evolution not scale invariant for fixed hbar under these transformations.",
+  "roots": {
+    "inner_launch": -0.08367838183135101,
+    "inner_kick": -0.1761395463012073,
+    "shell_launch": 0.083778146308418,
+    "shell_kick": 0.17610007047105136
+  },
+  "inner_guaranteed_below": -0.1761395463012073,
+  "shell_guaranteed_above": 0.17610007047105136,
+  "max_relative_errors": {
+    "launch_margin": 2.9531932455029164e-14,
+    "kick_margin": 6.17284001691587e-14,
+    "period": 1.1213252548714081e-14,
+    "multiplier": 2.220446049250313e-14,
+    "peak_ratio": 4.440892098500626e-16,
+    "energy": 6.661338147750939e-16
+  },
+  "state_independent_controls": [
+    {
+      "state_independent_force_sign": -1.0,
+      "fates": [
+        "interior",
+        "interior",
+        "interior"
+      ]
+    },
+    {
+      "state_independent_force_sign": 1.0,
+      "fates": [
+        "shell",
+        "shell",
+        "shell"
+      ]
+    }
+  ]
+}

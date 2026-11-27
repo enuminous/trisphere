@@ -1,0 +1,23 @@
+Scale True {'ratio': 6.661338147750939e-16, 'gap_ratio': 8.08242361927114e-14, 'multiplier': 3.064215547965432e-14, 'normalized_period': 3.952393967665557e-14, 'normalized_energy': 4.54081217071689e-14, 'peak_ratio': 4.440892098500626e-16} 8.720348887436557e-11 3.9690269842442005e-11
+Decision True {'max_norm_error': 1.3094095807630879e-09, 'max_x_error': 1.3094095807630879e-09, 'max_energy_balance_error': np.float64(1.1903367180821078e-10)} 8.799161399508648e-11 108
+feedback 1.0 shell 24 {'u': 0.30499980054963116, 'w': 0.14499980054963116, 'E': 4.180295852515799, 'F': 1.1104708176585931, 'loss': 3.0698250348572063, 'T': 24.636645380949894, 'm': 0.1393269944586926} 0.0
+feedback -1.0 interior 24 {'E': 4.292536263803327, 'T': 15.697588125953114, 'm': 0.2848458705536382, 'peak': 10.910008605629436} 4.440892098500626e-15
+feedback 0.0 stall_inbound 0 None None
+lambda_zero 1.0 stall_inbound 0 None None
+lambda_zero -1.0 stall_inbound 0 None None
+lambda_zero 0.0 stall_inbound 0 None None
+scalar_clock 1.0 stall_inbound 0 None None
+scalar_clock -1.0 stall_inbound 0 None None
+scalar_clock 0.0 stall_inbound 0 None None
+one_way 1.0 stall_inbound 0 None None
+one_way -1.0 stall_inbound 0 None None
+one_way 0.0 stall_inbound 0 None None
+Scan -1.0 interior 24
+Scan -0.75 interior 24
+Scan -0.5 interior 24
+Scan -0.25 interior 24
+Scan 0.0 stall_inbound 0
+Scan 0.25 shell 24
+Scan 0.5 shell 24
+Scan 0.75 shell 24
+Scan 1.0 shell 24
